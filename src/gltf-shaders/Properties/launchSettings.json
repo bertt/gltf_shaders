@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "gltf-shaders": {
+      "commandName": "Project",
+      "commandLineArgs": " -h localhost -U postgres -d postgres -t delaware_buildings_3857_no_lod -i geom_triangle --idcolumn ogc_fid  --shaderscolumn shaders"
+    }
+  }
+}
