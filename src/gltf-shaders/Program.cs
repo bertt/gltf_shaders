@@ -13,8 +13,8 @@ namespace gltf_shaders
     {
         static void Main(string[] args)
         {
-            var diffuseColor = "#E6008000";
-            var specularGlossiness = "4D0000ff";
+            var diffuseColor = "#E6009000";
+            var specularGlossiness = "#4D0000ff";
 
             var version = Assembly.GetEntryAssembly().GetName().Version;
             Console.WriteLine($"Tool: Add shader info {version}");
@@ -38,7 +38,7 @@ namespace gltf_shaders
                 }
 
                 var conn = new NpgsqlConnection(connectionString);
-                var sql = $"select ST_NumGeometries({o.InputGeometryColumn}) as NumberOfGeometries, {o.IdColumn} from {o.Table}";
+                var sql = $"select ST_NumGeometries({o.InputGeometryColumn}) as NumberOfGeometries, {o.IdColumn} as id from {o.Table}";
                 var buildings = conn.Query<Building>(sql).ToList(); ;
 
                 Console.WriteLine("Hello World!" + buildings.Count);
